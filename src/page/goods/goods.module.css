@@ -37,6 +37,7 @@
 .added{
     width: 86%;
     height: 50px;
+    margin: 0 auto;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -61,11 +62,19 @@
     .mainDiv{
         padding: 50px 20px;
         flex-direction: column;
+        align-items: center;
     }
     .divBox1, .divBox2{
         width: 100%;
     }
     .divBox2 h1{
         font-size: 25px;
+    }
+    .added{
+        width: calc(100% - 40px );
+        height: auto;
+        font-size: 15px;
+        padding: 10px;
+        text-align: center;
     }
 }

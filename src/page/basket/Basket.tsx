@@ -2,7 +2,7 @@ import s from './basket.module.css'
 import React, {useEffect, useState} from 'react';
 import {useDispatch, useSelector} from "react-redux";
 import {updateNumberGoods} from "../../../store/basket-reduser.js";
-import {Link} from "react-router-dom";
+import {useNavigate} from "react-router-dom";
 import { styled } from '@mui/material/styles';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
@@ -19,8 +19,9 @@ import {ICountedProduct, RootState} from "../../utils/interface.ts";
 const Basket: React.FC = () => {
 
     const allGoodsState = useSelector((state: RootState) => state.basket.goods)
-    const dispatch = useDispatch()
     const [allGoods, setAllGoods] = useState<ICountedProduct[]>([])
+    const dispatch = useDispatch()
+    const navigate = useNavigate()
 
     useEffect(() => {
         setAllGoods(allGoodsState)
@@ -61,6 +62,7 @@ const Basket: React.FC = () => {
 
     const order = () => {
         localStorage.setItem('goods', JSON.stringify(allGoods))
+        navigate('/register')
     }
 
     const StyledTableCell = styled(TableCell)(({ theme }) => ({
@@ -108,7 +110,7 @@ const Basket: React.FC = () => {
                                         <StyledTableCell align="right">{item?.price} $</StyledTableCell>
                                         <StyledTableCell align="right" style={{display: 'flex', flexDirection: 'row', justifyContent: 'center'}}>
                                             <span onClick={() => addGoods(item.id)} className={s.butPlus}>+ </span>
-                                            <span className={s.num}>{item.count}</span>
+                                            <span className={s.num}>{item?.count}</span>
                                             <span onClick={() => minesGoods(item.id)} className={s.butMines}> -</span>
                                         </StyledTableCell>
                                         <StyledTableCell align="right">
@@ -127,7 +129,8 @@ const Basket: React.FC = () => {
             </TableContainer>
 
             <div className={s.divOrder}>
-                <Link to='/register' className={s.butOrder} onClick={order}>To order</Link>
+                <Button onClick={order} disabled={allGoodsState.length === 0}
+                 variant="contained">To order</Button>
             </div>
 
         </div>

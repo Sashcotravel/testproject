@@ -84,7 +84,8 @@
 .added{
     width: 86%;
     height: 50px;
-    display: none;
+    margin: 0 auto;
+    display: flex;
     justify-content: center;
     align-items: center;
     background-color: coral;
@@ -124,6 +125,8 @@
     .added{
         height: auto;
         font-size: 15px;
-        padding: 5px;
+        width: calc(100% - 40px);
+        padding: 10px;
+        text-align: center;
     }
 }

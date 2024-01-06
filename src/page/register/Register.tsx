@@ -48,18 +48,6 @@ const Register = () => {
         setFormData({...formData, [name]: value});
     };
 
-    // const handleBlur = (e) => {
-    //     const { name, value } = e.target;
-    //
-    //     if (name === 'email') {
-    //         validateEmail(value) ? document.getElementById('email').style.border = 'none'
-    //             : document.getElementById('email').error
-    //     } else if (name === 'phone') {
-    //         validatePhone(value) ? document.getElementById('phone').style.border = 'none'
-    //             : document.getElementById('phone').style.border = '2px solid red'
-    //     }
-    // };
-
     const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
 
@@ -171,11 +159,11 @@ const Register = () => {
                     variant="standard"
                     name="email"
                     value={formData.email}
-                    // onBlur={handleBlur}
                     onChange={handleInputChange}
                     id="email"
                     error={!validateEmail(formData.email)}
                     placeholder="Enter email..."
+                    style={!validateEmail(formData.email) ? {borderBottom: '4px solid #d32f2f'} : undefined}
                 />
                 <h2>Name:</h2>
                 <TextField
@@ -192,11 +180,11 @@ const Register = () => {
                     variant="standard"
                     name="phone"
                     value={formData.phone}
-                    // onBlur={handleBlur}
                     onChange={handleInputChange}
                     id="phone"
                     error={!validatePhone(formData.phone)}
                     placeholder="+380632195777"
+                    style={!validatePhone(formData.email) ? {borderBottom: '4px solid #d32f2f'} : undefined}
                 />
 
                 <Button

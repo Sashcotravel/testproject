@@ -8,6 +8,7 @@ import {Button, FormControlLabel, Pagination, Radio, RadioGroup, Stack, TextFiel
 
 const Main: React.FC = () => {
 
+    const [addedName2, setAddedName2] = useState(false)
     const [searchResult, setSearchResult] = useState<ICountedProduct[]>([])
     const [allProduct, setAllProduct] = useState<ICountedProduct[]>([])
     const [category, setCategory] = useState('all')
@@ -39,10 +40,7 @@ const Main: React.FC = () => {
 
     useEffect(() => {
         setTimeout(() => {
-            const addedNameElement = document.getElementById('addedName');
-            if (addedNameElement) {
-                addedNameElement.style.display = 'none';
-            }
+            setAddedName2(false)
         }, 3000)
     }, [addedName]);
 
@@ -65,10 +63,7 @@ const Main: React.FC = () => {
 
     const addGoods = (item: ICountedProduct) => {
         dispatch(addNumberGoods(item))
-        const addedNameElement = document.getElementById('addedName')
-        if(addedNameElement){
-            addedNameElement.style.display = 'flex'
-        }
+        setAddedName2(true)
         setAddedName(item.title)
     }
 
@@ -85,7 +80,7 @@ const Main: React.FC = () => {
     return (
         <div className={s.mainBlock}>
 
-            <div className={s.added} id='addedName'>Good {addedName} added</div>
+            {addedName2 && <div className={s.added} id='addedName'>Good {addedName} added</div>}
 
             <TextField id="outlined-search" className={s.input} label="Search field" type="search"
                        onChange={changeTel} value={title} />

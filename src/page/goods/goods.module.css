@@ -1,0 +1,71 @@
+
+.mainDiv{
+    padding: 100px ;
+    display: flex;
+    justify-content: space-between;
+}
+
+.divBox1{
+    width: 45%;
+}
+
+.divBox1 img{
+    width: 100%;
+    object-fit: cover;
+}
+
+.divBox2{
+    width: 45%;
+    font-size: 20px;
+}
+
+.divBox2 h1{
+    font-size: 50px;
+}
+
+
+.divBox2 button {
+    width: 100%;
+    margin-top: 50px;
+}
+
+.cat{
+    text-align: end;
+    margin: 10px 0;
+}
+
+.added{
+    width: 86%;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: coral;
+    font-size: 25px;
+    color: white;
+    font-weight: bold;
+    position: fixed;
+    transition: all .5s ease-out;
+}
+
+
+
+
+@media screen and (max-width: 900px){
+    .divBox2 h1{
+        font-size: 30px;
+    }
+}
+
+@media screen and (max-width: 600px){
+    .mainDiv{
+        padding: 50px 20px;
+        flex-direction: column;
+    }
+    .divBox1, .divBox2{
+        width: 100%;
+    }
+    .divBox2 h1{
+        font-size: 25px;
+    }
+}

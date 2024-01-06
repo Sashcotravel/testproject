@@ -1,0 +1,129 @@
+
+.mainBlock{
+    padding: 0 100px;
+}
+
+.input{
+    width: 50%;
+    /*border: none;*/
+    /*outline: none;*/
+    /*height: 50px;*/
+    /*padding: 5px 10px;*/
+    border-radius: 10px;
+    /*font-size: 17px;*/
+    background-color: azure;
+}
+
+.divMainBox{
+    display: flex;
+    justify-content: space-between;
+    margin: 50px 0;
+}
+
+.divBox2{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+}
+
+.divBox1{
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    padding: 0 20px 5px 0;
+}
+
+.divBox1 label{
+    display: flex;
+}
+
+.boxGoods{
+    width: 300px;
+    background-color: azure;
+    color: black;
+    height: fit-content;
+}
+
+.boxGoods img{
+    width: 100%;
+    object-fit: cover;
+}
+
+.boxGoods div{
+    padding: 10px;
+    font-family: "DM Sans", sans-serif;
+
+}
+
+.boxGoods div p{
+    margin-bottom: 10px;
+}
+
+.boxGoods div button{
+    /*width: 100%;*/
+    /*border: none;*/
+    /*outline: none;*/
+    /*padding: 5px 10px;*/
+    /*border-radius: 10px;*/
+    /*font-size: 17px;*/
+    /*background-color: aqua;*/
+    /*cursor: pointer;*/
+}
+
+.boxGoods div button:hover{
+    background-color: rgb(156 39 176);
+    color: azure;
+}
+
+.inputLabel{
+    margin-right: 5px;
+}
+
+.added{
+    width: 86%;
+    height: 50px;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    background-color: coral;
+    font-size: 25px;
+    color: white;
+    font-weight: bold;
+    position: fixed;
+    transition: all .5s ease-out;
+    z-index: 10;
+}
+
+.divPagination{
+    width: fit-content;
+    display: flex;
+    justify-content: center;
+    margin: 50px auto;
+    background-color: azure;
+    padding: 10px;
+}
+
+
+@media screen and (max-width: 600px){
+    .mainBlock{
+        padding: 50px 20px;
+    }
+    .divMainBox{
+        flex-direction: column;
+    }
+    .input, .boxGoods{
+        width: 100%;
+    }
+    .divBox1, .divBox2{
+        width: 100%;
+        padding: 0;
+        margin-bottom: 20px;
+    }
+    .added{
+        height: auto;
+        font-size: 15px;
+        padding: 5px;
+    }
+}

@@ -76,23 +76,7 @@ const Register = () => {
             emailjs.send('service_zdhdrx8', 'template_va22k5r', templateParams, '3Mc-73LbFRIjdNMkx');
         }
         else {
-            const addedEmailElement = document.getElementById('phone');
-            const addedPhoneElement = document.getElementById('email');
-            if(!isEmailValid && !isPhoneValid){
-                if (addedPhoneElement && addedEmailElement) {
-                    addedPhoneElement.style.border = '2px solid red'
-                    addedEmailElement.style.border = '2px solid red'
-                }
-            }
-            if(!isEmailValid){
-                if (addedEmailElement) {
-                    addedEmailElement.style.border = '2px solid red'
-                }
-            } else if(!isPhoneValid){
-                if (addedPhoneElement) {
-                    addedPhoneElement.style.border = '2px solid red'
-                }
-            }
+
         }
     };
 
@@ -184,7 +168,7 @@ const Register = () => {
                     id="phone"
                     error={!validatePhone(formData.phone)}
                     placeholder="+380632195777"
-                    style={!validatePhone(formData.email) ? {borderBottom: '4px solid #d32f2f'} : undefined}
+                    style={!validatePhone(formData.phone) ? {borderBottom: '4px solid #d32f2f'} : undefined}
                 />
 
                 <Button

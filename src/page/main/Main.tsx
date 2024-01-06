@@ -10,7 +10,6 @@ const Main: React.FC = () => {
 
     const [searchResult, setSearchResult] = useState<ICountedProduct[]>([])
     const [allProduct, setAllProduct] = useState<ICountedProduct[]>([])
-    const [allCategories, setAllCategories] = useState<string[]>([])
     const [category, setCategory] = useState('all')
     const [title, setTitle] = useState('')
     const [addedName, setAddedName] = useState('')
@@ -32,7 +31,6 @@ const Main: React.FC = () => {
     useEffect(() => {
         setAllProduct(productState);
         setSearchResult(productState);
-        setAllCategories(categories)
     }, [productState, category]);
 
     useEffect(() => {
@@ -103,7 +101,7 @@ const Main: React.FC = () => {
                         <FormControlLabel value="all"
                                           control={<Radio color="warning" />} label="All" />
                         {
-                            allCategories?.map((item, index) => {
+                            categories?.map((item, index) => {
                                 return (
                                     <FormControlLabel value={item} key={index}
                                                       control={<Radio color="warning" />} label={item} />

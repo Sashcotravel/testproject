@@ -115,8 +115,8 @@ const Main: React.FC = () => {
                                 <div>
                                     <Link to={`/goods/${item?.id}`}>
                                         <p>{item?.title}</p>
-                                        <p>Категорія - {item?.category}</p>
-                                        <p>Оцінка товару {item?.rating?.rate}</p>
+                                        <p>Category - {item?.category}</p>
+                                        <p>Rate {item?.rating?.rate}</p>
                                         <p>{item?.description?.slice(0, 60)}...</p>
                                         <p>{item?.price} $</p>
                                     </Link>

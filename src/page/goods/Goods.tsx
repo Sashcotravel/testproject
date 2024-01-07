@@ -50,8 +50,8 @@ const Goods: React.FC = () => {
 
             <div className={s.divBox2}>
                 <h1>{goods?.title}</h1>
-                <p className={s.cat}>Категорія - {goods?.category}</p>
-                <p className={s.cat}>Оцінка товару {goods?.rating?.rate}</p>
+                <p className={s.cat}>Category - {goods?.category}</p>
+                <p className={s.cat}>Rate {goods?.rating?.rate}</p>
                 <p>{goods?.description}</p>
                 <p className={s.cat}>Prise - {goods?.price} $</p>
                 <Button variant="contained" size="large" onClick={addGoods}>
